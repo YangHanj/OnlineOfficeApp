@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "消息列表",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-list": "/components/components/uni-list/uni-list",
+    "uni-list-item": "/components/components/uni-list-item/uni-list-item",
+    "uni-chat": "/components/components/uni-list-chat/uni-list-chat",
+    "uni-ad": "/components/components/uni-list-ad/uni-list-ad"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "会议详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-popup": "/components/components/uni-popup/uni-popup",
+    "uni-popup-dialog": "/components/components/uni-popup/uni-popup-dialog",
+    "uni-popup-message": "/components/components/uni-popup/uni-popup-message"
+  }
+}

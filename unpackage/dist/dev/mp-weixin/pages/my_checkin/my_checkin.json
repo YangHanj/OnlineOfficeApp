@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "本月考勤情况",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-calendar": "/components/components/uni-calendar/uni-calendar"
+  }
+}
