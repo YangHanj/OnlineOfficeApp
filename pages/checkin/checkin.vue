@@ -99,7 +99,7 @@
 									uni.uploadFile({
 										url: that.url.checkin,
 										filePath: that.photoPath,
-										name: "photot",
+										name: "photo",
 										header:{
 											token: uni.getStorageSync("token")
 										},
@@ -111,7 +111,8 @@
 											district:district
 										},
 										success:function(resp){
-											if(resp.statusCode == 500){
+											console.log(resp)
+											if(resp.statusCode == 500 && resp.data != "考勤时间已过"){
 												uni.hideLoading()
 												uni.showModal({
 													title:"提示信息",

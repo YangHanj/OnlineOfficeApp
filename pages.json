@@ -117,6 +117,33 @@
             }
             
         }
+        ,{
+            "path" : "pages/member/member",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "选择成员",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/approval_list/approval_list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "在线审批",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/approval/approval",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "审批",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
@@ -193,6 +220,10 @@
 			{
 				"name": "meeting", //模式名称
 				"path": "pages/meeting/meeting", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},{
+				"name": "approval_list", //模式名称
+				"path": "pages/approval_list/approval_list", //启动页面，必选
 				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]

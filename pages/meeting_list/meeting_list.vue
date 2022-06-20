@@ -1,13 +1,13 @@
 <template>
 	<view class="page">
 		<image src="../../static/logo-3.jpg" mode="widthFix" class="logo"></image>
-		<view class="add">
+		<view class="add" v-if="checkPermission(['ROOT','MEETING:INSERT'])" @tap="toMeetingPage(null,'insert')">
 			<image src="../../static/icon-17.png" mode="widthFix" class="icon"></image>
 			<text>创建会议</text>
 		</view>
 		<view v-for="one in list" :key="one.date">
 			<view class="list-title">{{one.date}}</view>
-			<view class="item" v-for="meeting in one.list" :key="meeting.id">
+			<view class="item" v-for="meeting in one.list" :key="meeting.id" @longpress="deleteById(meeting.id,meeting.date,meeting.start)">
 				<view class="header">
 					<view class="left">
 						<image v-if="meeting.type == '线上会议'" src="../../static/icon-11.png" mode="widthFix" class="icon"></image>
@@ -15,7 +15,8 @@
 						<text>{{meeting.desc}}</text>
 						<text :class="meeting.status == '未开始'?'blue':'red'">（{{meeting.status}})</text>
 					</view>
-					<view class="right">
+					<view class="right" @tap="toMeetingPage(meeting.id,'edit')"
+					v-if="checkPermission(['ROOT','MEETING:UPDATE']) && meeting.status == '未开始'">
 						<text>编辑</text>
 					</view>
 				</view>
@@ -36,7 +37,7 @@
 						</view>
 					</view>
 				
-					<button class="btn" v-if="meeting.type=='线上会议'">进入</button>
+					<button class="btn" v-if="meeting.type=='线上会议'" @tap="enter(meeting.id,meeting.uuid,meeting.date,meeting.start)">进入</button>
 				</view>
 			</view>
 		</view>
@@ -82,6 +83,27 @@
 			that.loadMeetingList(that);
 		},
 		methods: {
+			enter:function(id,uuid,date,start){
+				// console.log(id)
+				// console.log(uuid)
+				// console.log(date)
+				// console.log(start)
+				date = date.replace("年","/").replace("月","/").replace("日","/");
+				let begin = new Date(date + " " + start + ":00");
+				let now = new Date();
+				if(now.getTime() >= begin.getTime() - 10 * 60 * 1000){
+					//需要企业版开启TRTC
+					uni.showToast({
+						title:"功能正在开发中",
+						icon:"loading"
+					})
+				}else{
+					uni.showToast({
+						title:"该会议不能参加",
+						icon:"error"
+					})
+				}
+			},
 			loadMeetingList:function(ref){
 				let data = {
 					page:ref.page,
@@ -127,6 +149,50 @@
 							}
 						}
 						
+					}
+				})
+			},
+			toMeetingPage:function(id,opt){
+				uni.navigateTo({
+					url:"../meeting/meeting?id="+id+"&opt="+opt
+				})
+			},
+			deleteById:function(id,date,start){
+				let now = new Date();
+				let meetingDate = new Date(date + " " + start + ":00");
+				if(now.getTime() >= meetingDate.getTime() - 20 * 60 * 1000){
+					uni.showToast({
+						title:"会议即将开始,无法删除!",
+						icon:"none"
+					});
+					return;
+				}
+				let that = this;
+				uni.vibrateShort({});
+				uni.showModal({
+					title:"提示信息",
+					content:"是否删除这个会议?",
+					success:function(resp){
+						if(resp.confirm){
+							let data = {id:id}; 
+							that.ajax(that.url.deleteMeetingById,'POST',data,function(resp){
+								uni.showToast({
+									title:"删除成功!",
+									icon:"success",
+									complete:function(){
+										setTimeout(function(){
+											that.page = 1;
+											that.isLastPage = false;
+											uni.pageScrollTo({
+												scrollTop:"0"
+											});
+											that.list = [];
+											that.loadMeetingList(that);
+										},2000)
+									}
+								})
+							})
+						}
 					}
 				})
 			}

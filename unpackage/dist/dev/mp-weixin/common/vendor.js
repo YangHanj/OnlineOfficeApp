@@ -589,14 +589,6 @@ var getSystemInfo = {
   } };
 
 
-var showActionSheet = {
-  args: function args(fromArgs) {
-    if (typeof fromArgs === 'object') {
-      fromArgs.alertText = fromArgs.title;
-    }
-  } };
-
-
 // import navigateTo from 'uni-helpers/navigate-to'
 
 var protocols = {
@@ -604,8 +596,7 @@ var protocols = {
   // navigateTo,  // 由于在微信开发者工具的页面参数，会显示__id__参数，因此暂时关闭mp-weixin对于navigateTo的AOP
   previewImage: previewImage,
   getSystemInfo: getSystemInfo,
-  getSystemInfoSync: getSystemInfo,
-  showActionSheet: showActionSheet };
+  getSystemInfoSync: getSystemInfo };
 
 var todos = [
 'vibrate',
@@ -2229,15 +2220,15 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 122:
-/*!*************************************************************************************!*\
-  !*** D:/桌面/OnlineOfficeWX/OnlineOfficeApp/components/components/uni-popup/popup.js ***!
-  \*************************************************************************************/
+/***/ 130:
+/*!********************************************************************************************************!*\
+  !*** /Users/yanghan/Desktop/Project/project2/OnlineOfficeApp/components/components/uni-popup/popup.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 123));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 131));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // 定义 type 类型:弹出类型：top/bottom/center
 var config = {
   // 顶部弹出
@@ -2264,10 +2255,10 @@ var config = {
 
 /***/ }),
 
-/***/ 123:
-/*!***************************************************************************************!*\
-  !*** D:/桌面/OnlineOfficeWX/OnlineOfficeApp/components/components/uni-popup/message.js ***!
-  \***************************************************************************************/
+/***/ 131:
+/*!**********************************************************************************************************!*\
+  !*** /Users/yanghan/Desktop/Project/project2/OnlineOfficeApp/components/components/uni-popup/message.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2295,15 +2286,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 159:
-/*!***************************************************************************************!*\
-  !*** D:/桌面/OnlineOfficeWX/OnlineOfficeApp/components/components/uni-calendar/util.js ***!
-  \***************************************************************************************/
+/***/ 167:
+/*!**********************************************************************************************************!*\
+  !*** /Users/yanghan/Desktop/Project/project2/OnlineOfficeApp/components/components/uni-calendar/util.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar.js */ 160));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar.js */ 168));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
 
 Calendar = /*#__PURE__*/function () {
   function Calendar()
@@ -2658,10 +2649,10 @@ Calendar;exports.default = _default;
 
 /***/ }),
 
-/***/ 160:
-/*!*******************************************************************************************!*\
-  !*** D:/桌面/OnlineOfficeWX/OnlineOfficeApp/components/components/uni-calendar/calendar.js ***!
-  \*******************************************************************************************/
+/***/ 168:
+/*!**************************************************************************************************************!*\
+  !*** /Users/yanghan/Desktop/Project/project2/OnlineOfficeApp/components/components/uni-calendar/calendar.js ***!
+  \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3215,10 +3206,10 @@ calendar;exports.default = _default;
 
 /***/ }),
 
-/***/ 189:
-/*!*************************************************************************************!*\
-  !*** D:/桌面/OnlineOfficeWX/OnlineOfficeApp/components/components/uni-icons/icons.js ***!
-  \*************************************************************************************/
+/***/ 197:
+/*!********************************************************************************************************!*\
+  !*** /Users/yanghan/Desktop/Project/project2/OnlineOfficeApp/components/components/uni-icons/icons.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3399,7 +3390,7 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/*!
  * Vue.js v2.6.11
- * (c) 2014-2022 Evan You
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
 /*  */
@@ -7479,10 +7470,10 @@ function updateChildComponent (
     // keep a copy of raw propsData
     vm.$options.propsData = propsData;
   }
-  
+
   // fixed by xxxxxx update properties(mp runtime)
   vm._$updateProperties && vm._$updateProperties(vm);
-  
+
   // update listeners
   listeners = listeners || emptyObject;
   var oldListeners = vm.$options._parentListeners;
@@ -8008,12 +7999,12 @@ function initProps (vm, propsOptions) {
       defineReactive$$1(props, key, value, function () {
         if (!isRoot && !isUpdatingChildComponent) {
           {
-            if(vm.mpHost === 'mp-baidu' || vm.mpHost === 'mp-kuaishou' || vm.mpHost === 'mp-xhs'){//百度、快手、小红书 observer 在 setData callback 之后触发，直接忽略该 warn
+            if(vm.mpHost === 'mp-baidu' || vm.mpHost === 'mp-kuaishou'){//百度、快手 observer 在 setData callback 之后触发，直接忽略该 warn
                 return
             }
             //fixed by xxxxxx __next_tick_pending,uni://form-field 时不告警
             if(
-                key === 'value' && 
+                key === 'value' &&
                 Array.isArray(vm.$options.behaviors) &&
                 vm.$options.behaviors.indexOf('uni://form-field') !== -1
               ){
@@ -8025,7 +8016,7 @@ function initProps (vm, propsOptions) {
             var $parent = vm.$parent;
             while($parent){
               if($parent.__next_tick_pending){
-                return  
+                return
               }
               $parent = $parent.$parent;
             }
@@ -8353,10 +8344,10 @@ function initMixin (Vue) {
     initEvents(vm);
     initRender(vm);
     callHook(vm, 'beforeCreate');
-    !vm._$fallback && initInjections(vm); // resolve injections before data/props  
+    !vm._$fallback && initInjections(vm); // resolve injections before data/props
     initState(vm);
     !vm._$fallback && initProvide(vm); // resolve provide after data/props
-    !vm._$fallback && callHook(vm, 'created');      
+    !vm._$fallback && callHook(vm, 'created');
 
     /* istanbul ignore if */
     if ( true && config.performance && mark) {
@@ -8855,6 +8846,7 @@ function _diff(current, pre, path, result) {
                 var currentType = type(currentValue);
                 var preType = type(preValue);
                 if (currentType != ARRAYTYPE && currentType != OBJECTTYPE) {
+                    // NOTE 此处将 != 修改为 !==。涉及地方太多恐怕测试不到，如果出现数据对比问题，将其修改回来。
                     if (currentValue !== pre[key]) {
                         setResult(result, (path == '' ? '' : path + ".") + key, currentValue);
                     }
@@ -9081,7 +9073,7 @@ function mountComponent$1(
       }
     }
   }
-  
+
   !vm._$fallback && callHook(vm, 'beforeMount');
 
   var updateComponent = function () {
@@ -9214,9 +9206,10 @@ function internalMixin(Vue) {
 
   Vue.prototype.$emit = function(event) {
     if (this.$scope && event) {
-      (this.$scope['_triggerEvent'] || this.$scope['triggerEvent']).call(this.$scope, event, {
-        __args__: toArray(arguments, 1)
-      });
+      (this.$scope['_triggerEvent'] || this.$scope['triggerEvent'])
+        .call(this.$scope, event, {
+          __args__: toArray(arguments, 1)
+        })
     }
     return oldEmit.apply(this, arguments)
   };
@@ -9281,7 +9274,7 @@ function internalMixin(Vue) {
       target = this;
     }
     // 解决动态属性添加
-    Vue.set(target, key, value);
+    Vue.set(target, key, value)
   };
 
   Vue.prototype.__set_sync = function(target, key, value) {
@@ -9289,7 +9282,7 @@ function internalMixin(Vue) {
       target = this;
     }
     // 解决动态属性添加
-    Vue.set(target, key, value);
+    Vue.set(target, key, value)
   };
 
   Vue.prototype.__get_orig = function(item) {
@@ -9422,7 +9415,7 @@ Vue.prototype.__patch__ = patch;
 // public mount method
 Vue.prototype.$mount = function(
     el ,
-    hydrating 
+    hydrating
 ) {
     return mountComponent$1(this, el, hydrating)
 };
@@ -9903,9 +9896,9 @@ function resolveLocaleChain(locale) {
 /***/ }),
 
 /***/ 5:
-/*!*******************************************************!*\
-  !*** D:/桌面/OnlineOfficeWX/OnlineOfficeApp/pages.json ***!
-  \*******************************************************/
+/*!**************************************************************************!*\
+  !*** /Users/yanghan/Desktop/Project/project2/OnlineOfficeApp/pages.json ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9914,9 +9907,9 @@ function resolveLocaleChain(locale) {
 /***/ }),
 
 /***/ 74:
-/*!**********************************************************************!*\
-  !*** D:/桌面/OnlineOfficeWX/OnlineOfficeApp/lib/qqmap-wx-jssdk.min.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************************!*\
+  !*** /Users/yanghan/Desktop/Project/project2/OnlineOfficeApp/lib/qqmap-wx-jssdk.min.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

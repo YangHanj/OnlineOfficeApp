@@ -66,7 +66,7 @@
 					<image mode="widthFix" src="../../static/nav-9.png" class="icon"></image>
 					<text class="name">公告通知</text>
 				</view>
-				<view class="nav">
+				<view class="nav" @tap="toPage('在线审批','../approval_list/approval_list')">
 					<image mode="widthFix" src="../../static/nav-10.png" class="icon"></image>
 					<text class="name">在线审批</text>
 				</view>
@@ -139,10 +139,21 @@
 		},
 		methods: {
 			toPage:function(name,url){
-				//TODO 验证用户权限
-				uni.navigateTo({
-					url:url
-				})
+				let flag = false;
+				if(name == '在线审批'){
+					flag = !this.checkPermission(['WORKFLOW:APPROVAL']);
+				}
+				if(flag){
+					uni.showToast({
+						title:"你不具备相关权限",
+						icon:"error"
+					})
+				}else{
+					//TODO 验证用户权限
+					uni.navigateTo({
+						url:url
+					})
+				}	
 			}
 		}
 	}
